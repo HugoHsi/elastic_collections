@@ -35,9 +35,13 @@ function gotAllTexture(err) {
     return;
   }
 
-  // call functions to log and show the books
+  // call functions to log and show the texture
   consoleLogTexture();
-  showTexture();
+  try {
+    showTexture();
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 // just loop through the texture and console.log them
@@ -65,14 +69,77 @@ function showTexture() {
     // document.body.append(textureMat);
 
     var textureType = texture.fields.type;
-    textureType.forEach((type) => {
-      if (type == "blanket") {
-        // display blanket images
-        var textureImg = document.createElement("img");
-        textureImg.classListadd('blanket-img');
-        textureImg.src = texture.fields.image[0].url;
-        document.querySelector(".cloth").appendChild();
-      }
-    })
+    if (textureType == "Blanket") {
+      // create new div
+      var textureContainer = document.createElement("div");
+      textureContainer.classList.add("texture-container");
+      document.querySelector(".container").append(textureContainer);
+
+      // display blanket images
+      var textureImg = document.createElement("img");
+      textureImg.classList.add("texture-image");
+      textureImg.classList.add("js-modal-toggle");
+      textureImg.src = texture.fields.image[0].url;
+      textureContainer.appendChild(textureImg);
+
+      // display type
+      var textureType = document.createElement("h1");
+      textureType.innerText = texture.fields.type;
+      textureContainer.appendChild(textureType);
+
+      // display color
+      var textureColor = document.createElement("p");
+      textureColor.innerText = texture.fields.color;
+      textureContainer.appendChild(textureColor);
+
+      // display material
+      var textureMat = document.createElement("p");
+      textureMat.innerText = texture.fields.material;
+      textureContainer.appendChild(textureMat);
+
+      // add modal container 
+      var modalContainer = document.createElement("div");
+      modalContainer.classList.add("modal-container");
+      textureContainer.append(modalContainer);
+
+      // add modal box to the modal container
+      var modalBox = document.createElement("div");
+      modalBox.classList.add("modal-box");
+      modalContainer.append(modalBox);
+
+      // add image to modal box
+      var modalImage = document.createElement("img");
+      modalImage.classList.add("modal-image");
+      modalImage.src = texture.fields.image[0].url;
+      modalBox.append(modalImage);
+
+      // add a close button to our modal
+      var closeModalBtn = document.createElement("div");
+      closeModalBtn.classList.add("modal-close-btn");
+      closeModalBtn.classList.add("js-modal-toggle");
+      closeModalBtn.innerHTML = "Close";
+      modalBox.append(closeModalBtn);
+    }
   });
+
+  // close and open modal
+  // find all of our modals
+  var modals = document.querySelectorAll(".container");
+
+  // check if there are any modals
+  if (modals) {
+    modals.forEach((modal) => {
+
+        var toggles = modal.querySelectorAll(".js-modal-toggle");
+
+        // add event listener to each toggle, to hid and show modal
+        toggles.forEach((toggle) => {
+            
+            toggle.addEventListener("click", function() {
+                modal.classList.toggle("modal-is-active");
+            })
+
+        })
+    })
+  }
 }

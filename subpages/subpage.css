@@ -1,0 +1,86 @@
+@font-face {
+    font-family: mont-reg;
+    src: url(../assets/Montserrat-Regular.woff2)
+}
+
+@font-face {
+    font-family: mont-semibold;
+    src: url(../assets/Montserrat-SemiBold.woff2)
+}
+
+img {
+    width: 16rem;
+    height: 16rem;
+}
+
+h1 {
+    font-family: mont-semibold;
+    font-size: 2rem;
+    margin: 1rem;
+    margin-bottom: .5rem;
+}
+
+p {
+    font-family: mont-reg;
+    font-size: 1rem;
+    margin: .5rem;
+    margin-left: 1rem;
+}
+
+.texture-container {
+    border: 2px solid black;
+    width: fit-content;
+    margin: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.backbtn {
+    margin: 2rem;
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.modal-container {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none;
+}
+
+.modal-is-active .modal-container {
+    display: flex;
+}
+
+.modal-box {
+    box-sizing: border-box;
+    background: white;
+    position: relative;
+    height: auto;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.modal-close-btn {
+    font-family: mont-reg;
+}
+
+.modal-image {
+    width: max-content;
+    height: max-content;
+}
+
