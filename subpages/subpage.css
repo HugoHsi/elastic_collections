@@ -1,86 +1,115 @@
 @font-face {
-    font-family: mont-reg;
-    src: url(../assets/Montserrat-Regular.woff2)
+  font-family: mont-reg;
+  src: url(../assets/Montserrat-Regular.woff2);
 }
 
 @font-face {
-    font-family: mont-semibold;
-    src: url(../assets/Montserrat-SemiBold.woff2)
+  font-family: mont-semibold;
+  src: url(../assets/Montserrat-SemiBold.woff2);
 }
 
 img {
-    width: 16rem;
-    height: 16rem;
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 h1 {
-    font-family: mont-semibold;
-    font-size: 2rem;
-    margin: 1rem;
-    margin-bottom: .5rem;
+  font-family: mont-semibold;
+  font-size: 2rem;
+  margin: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
-    font-family: mont-reg;
-    font-size: 1rem;
-    margin: .5rem;
-    margin-left: 1rem;
+  font-family: mont-reg;
+  font-size: 1rem;
+  margin: 0.5rem;
+  margin-left: 1rem;
 }
 
 .texture-container {
-    border: 2px solid black;
-    width: fit-content;
-    margin: 2rem;
+  border: 3px solid black;
+  width: fit-content;
+  margin: 2rem;
+  transition: 300ms ease all;
+}
+
+.texture-container:hover {
+  /* transform: translateY(30px); */
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .backbtn {
-    margin: 2rem;
-    margin-bottom: 0px;
+  margin: 2rem;
+  margin-bottom: 0px;
+  transition: 300ms ease all;
+}
+
+.backbtn:hover {
+  transform: translateY(5px);
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .modal-container {
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    display: none;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .modal-is-active .modal-container {
-    display: flex;
+  display: flex;
 }
 
 .modal-box {
-    box-sizing: border-box;
-    background: white;
-    position: relative;
-    height: auto;
-    max-width: 1200px;
-    padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  height: auto;
 }
 
 .modal-close-btn {
-    font-family: mont-reg;
+  font-family: mont-reg;
+  color: white;
+  cursor: pointer;
 }
 
 .modal-image {
-    width: max-content;
-    height: max-content;
+  width: auto;
+  height: max-content;
+  max-height: 600px;
 }
 
+.black {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
+  z-index: -1;
+  opacity: 0%;
+  transition: 300ms ease all;
+}
+
+.black.opq {
+    opacity: 100%;
+    z-index: 100;
+  }

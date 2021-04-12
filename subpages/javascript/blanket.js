@@ -124,7 +124,7 @@ function showTexture() {
 
   // close and open modal
   // find all of our modals
-  var modals = document.querySelectorAll(".container");
+  var modals = document.querySelectorAll(".texture-container");
 
   // check if there are any modals
   if (modals) {
@@ -143,3 +143,34 @@ function showTexture() {
     })
   }
 }
+
+let backBtn = document.querySelector(".backbtn")
+let black = document.querySelector(".black")
+
+
+function remOpq() {
+    black.classList.remove("opq");
+}
+
+function addOpq() {
+  black.classList.add("opq");
+}
+
+
+
+setTimeout(function(){
+    remOpq()
+}, 300);
+
+backBtn.addEventListener("click", function() {
+  
+  // run the addOpg function first
+  addOpq();
+  
+  // set a delay of 400ms (or change to whatver you want, then redirect to cloth page
+   setTimeout(function(){
+     window.location.href = "../index.html";
+   }, 400);
+});
+
+

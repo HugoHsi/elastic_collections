@@ -1,4 +1,89 @@
+/* CSS files add styling rules to your content */
+@font-face {
+  font-family: mont-reg;
+  src: url(../assets/Montserrat-Regular.woff2);
+}
+
+@font-face {
+  font-family: mont-semibold;
+  src: url(../assets/Montserrat-SemiBold.woff2);
+}
 
 body {
-    font-family: Arial;
+  overflow-x: hidden;
+}
+
+li {
+  list-style-type: none;
+  font-size: 10rem;
+  width: fit-content;
+  transition: 300ms ease all;
+  font-family: mont-reg;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: translateX(120px);
+}
+
+.blanket.right {
+  transform: translateX(500%);
+}
+
+.cloth.right {
+  transform: translateX(500%);
+}
+
+.collection.right {
+  transform: translateX(500%);
+}
+
+.knit.right {
+  transform: translateX(500%);
+}
+
+.landscape.right {
+  transform: translateX(500%);
+}
+
+.lquid.right {
+  transform: translateX(500%);
+}
+
+.pillowcase.right {
+  transform: translateX(500%);
+}
+
+.pleats.right {
+  transform: translateX(500%);
+}
+
+.pompoms.right {
+  transform: translateX(500%);
+}
+
+.black {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
+  z-index: -1;
+  opacity: 0%;
+  transition: 300ms ease all 200ms;
+}
+
+.black.opq {
+  opacity: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+    li {
+        list-style-type: none;
+        font-size: 16vw;
+        width: fit-content;
+        font-family: mont-reg;
+        cursor: pointer;
+      }
 }
