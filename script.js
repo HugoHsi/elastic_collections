@@ -173,7 +173,7 @@ function pleatsRight() {
 
    // pompom
 function pompomRight() {
-    pleats.classList.add("right");
+    pompom.classList.add("right");
   }
 
  pompom.addEventListener("click", pompomRight);

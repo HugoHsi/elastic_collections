@@ -37,7 +37,7 @@ p {
 }
 
 .texture-container:hover {
-  /* transform: translateY(30px); */
+  margin-top: -5px;
 }
 
 .container {
