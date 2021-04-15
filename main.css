@@ -17,13 +17,29 @@ li {
   list-style-type: none;
   font-size: 10rem;
   width: fit-content;
-  transition: 300ms ease all;
   font-family: mont-reg;
   cursor: pointer;
 }
 
-li:hover {
-  transform: translateX(120px);
+img {
+  height: 180px;
+  width: 10vw;
+  object-fit: cover;
+}
+
+.row {
+  transition: 300ms ease all;
+  display: flex;
+  flex-direction: horizontal;
+  transform: translateX(-8vw);
+}
+
+li {
+  transition: 300ms ease all;
+}
+
+.row:hover {
+  transform: translateX(1px);
 }
 
 .blanket.right {
@@ -46,7 +62,7 @@ li:hover {
   transform: translateX(500%);
 }
 
-.lquid.right {
+.liquid.right {
   transform: translateX(500%);
 }
 
@@ -75,6 +91,7 @@ li:hover {
 }
 
 .black.opq {
+  z-index: 1;
   opacity: 100%;
 }
 
@@ -86,4 +103,18 @@ li:hover {
         font-family: mont-reg;
         cursor: pointer;
       }
+
+    img {
+        height: 16vw;
+        width: 8vw;
+
+    }
+
+    .row {
+      transition: 300ms ease all;
+      display: flex;
+      flex-direction: horizontal;
+      transform: translateX(-4vw);
+    }
+  
 }

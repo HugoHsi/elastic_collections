@@ -85,7 +85,7 @@ function knitRight() {
     knit.classList.add("right");
   }
 
-  knit.addEventListener("click", collectionRight);
+  knit.addEventListener("click", knitRight);
 
   knit.addEventListener("click", function() {
     

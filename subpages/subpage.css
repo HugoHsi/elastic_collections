@@ -50,6 +50,8 @@ p {
   margin: 2rem;
   margin-bottom: 0px;
   transition: 300ms ease all;
+  cursor: pointer;
+  width: fit-content;
 }
 
 .backbtn:hover {
