@@ -82,8 +82,14 @@ function showTexture() {
       textureImg.src = texture.fields.image[0].url;
       textureContainer.appendChild(textureImg);
 
+      // display material
+      var textureMat = document.createElement("h1");
+      textureMat.classList.add("js-modal-toggle");
+      textureMat.innerText = texture.fields.material;
+      textureContainer.appendChild(textureMat);
+
       // display type
-      var textureType = document.createElement("h1");
+      var textureType = document.createElement("p");
       textureType.innerText = texture.fields.type;
       textureContainer.appendChild(textureType);
 
@@ -92,12 +98,7 @@ function showTexture() {
       textureColor.innerText = texture.fields.color;
       textureContainer.appendChild(textureColor);
 
-      // display material
-      var textureMat = document.createElement("p");
-      textureMat.innerText = texture.fields.material;
-      textureContainer.appendChild(textureMat);
-
-      // add modal container 
+      // add modal container
       var modalContainer = document.createElement("div");
       modalContainer.classList.add("modal-container");
       textureContainer.append(modalContainer);
@@ -129,48 +130,39 @@ function showTexture() {
   // check if there are any modals
   if (modals) {
     modals.forEach((modal) => {
+      var toggles = modal.querySelectorAll(".js-modal-toggle");
 
-        var toggles = modal.querySelectorAll(".js-modal-toggle");
-
-        // add event listener to each toggle, to hid and show modal
-        toggles.forEach((toggle) => {
-            
-            toggle.addEventListener("click", function() {
-                modal.classList.toggle("modal-is-active");
-            })
-
-        })
-    })
+      // add event listener to each toggle, to hid and show modal
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          modal.classList.toggle("modal-is-active");
+        });
+      });
+    });
   }
 }
 
-let backBtn = document.querySelector(".backbtn")
-let black = document.querySelector(".black")
-
+let backBtn = document.querySelector(".backbtn");
+let black = document.querySelector(".black");
 
 function remOpq() {
-    black.classList.remove("opq");
+  black.classList.remove("opq");
 }
 
 function addOpq() {
   black.classList.add("opq");
 }
 
-
-
-setTimeout(function(){
-    remOpq()
+setTimeout(function () {
+  remOpq();
 }, 300);
 
-backBtn.addEventListener("click", function() {
-  
+backBtn.addEventListener("click", function () {
   // run the addOpg function first
   addOpq();
-  
+
   // set a delay of 400ms (or change to whatver you want, then redirect to cloth page
-   setTimeout(function(){
-     window.location.href = "../index.html";
-   }, 400);
+  setTimeout(function () {
+    window.location.href = "../index.html";
+  }, 400);
 });
-
-

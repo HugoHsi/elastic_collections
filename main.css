@@ -1,12 +1,12 @@
 /* CSS files add styling rules to your content */
 @font-face {
   font-family: mont-reg;
-  src: url(../assets/Montserrat-Regular.woff2);
+  src: url(./assets/Montserrat-Regular.woff2);
 }
 
 @font-face {
   font-family: mont-semibold;
-  src: url(../assets/Montserrat-SemiBold.woff2);
+  src: url(./assets/Montserrat-SemiBold.woff2);
 }
 
 body {
@@ -23,7 +23,7 @@ li {
 
 img {
   height: 180px;
-  width: 10vw;
+  width: 12vw;
   object-fit: cover;
 }
 
@@ -32,6 +32,9 @@ img {
   display: flex;
   flex-direction: horizontal;
   transform: translateX(-8vw);
+  width: fit-content;
+  padding-right: 5%;
+  border: 2px solid white;
 }
 
 li {
@@ -40,6 +43,8 @@ li {
 
 .row:hover {
   transform: translateX(1px);
+  color: lightsalmon;
+  border: 2px solid lightsalmon;
 }
 
 .blanket.right {
@@ -79,12 +84,12 @@ li {
 }
 
 .black {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: black;
+  width: 100%;
+  height: 100%;
+  background-color: lightsalmon;
   z-index: -1;
   opacity: 0%;
   transition: 300ms ease all 200ms;
